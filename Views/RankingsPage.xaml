@@ -1,0 +1,42 @@
+<Page x:Class="SHSWassceResultsMgt.Views.RankingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="Rankings" Background="Transparent">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Rankings" Style="{StaticResource PageTitle}"/>
+
+        <!-- Filters -->
+        <Border Grid.Row="1" Style="{StaticResource FormCard}">
+            <WrapPanel>
+                <ComboBox x:Name="ClassFilter" Width="140" md:HintAssist.Hint="Class" Margin="0,0,10,8"/>
+                <TextBox  x:Name="YearBox" Width="120" md:HintAssist.Hint="Academic Year" Text="2025/2026" Margin="0,0,10,8"/>
+                <TextBox  x:Name="TermBox" Width="80"  md:HintAssist.Hint="Term" Text="1" Margin="0,0,16,8"/>
+                <Button Content="Compute Rankings" Click="Compute_Click" Margin="0,0,0,8"/>
+            </WrapPanel>
+        </Border>
+
+        <!-- Rankings grid -->
+        <DataGrid Grid.Row="2" x:Name="Grid" AutoGenerateColumns="False" IsReadOnly="True"
+                  md:DataGridAssist.CellPadding="10,6">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Position"    Binding="{Binding Position}"    Width="80"/>
+                <DataGridTextColumn Header="Student"     Binding="{Binding StudentName}" Width="240"/>
+                <DataGridTextColumn Header="Class"       Binding="{Binding ClassName}"    Width="80"/>
+                <DataGridTextColumn Header="Subjects"    Binding="{Binding SubjectCount}" Width="90"/>
+                <DataGridTextColumn Header="Total Score" Binding="{Binding TotalScore}"   Width="110"/>
+                <DataGridTextColumn Header="Average"     Binding="{Binding Average}"      Width="100"/>
+                <DataGridTextColumn Header="Best 6 Agg." Binding="{Binding Aggregate}"    Width="110"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock Grid.Row="3" x:Name="Status" Opacity="0.6" FontSize="12" Margin="0,8,0,0"/>
+    </Grid>
+</Page>

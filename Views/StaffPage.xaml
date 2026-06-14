@@ -1,0 +1,37 @@
+<Page x:Class="SHSWassceResultsMgt.Views.StaffPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="Staff" Background="Transparent">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Staff" Style="{StaticResource PageTitle}"/>
+
+        <Border Grid.Row="1" Style="{StaticResource FormCard}">
+            <WrapPanel>
+                <TextBox x:Name="NameBox"     Width="200" md:HintAssist.Hint="Full Name *" Margin="0,0,10,8"/>
+                <TextBox x:Name="RoleBox"     Width="160" md:HintAssist.Hint="Role (e.g. Form Master)" Margin="0,0,10,8"/>
+                <TextBox x:Name="UsernameBox" Width="160" md:HintAssist.Hint="Username *" Margin="0,0,10,8"/>
+                <PasswordBox x:Name="PasswordBox" Width="160" md:HintAssist.Hint="Password *" Margin="0,0,16,8"/>
+                <Button Content="Add"    Click="Add_Click"    Margin="0,0,6,8"/>
+                <Button Content="Delete" Click="Delete_Click" Style="{StaticResource MaterialDesignOutlinedButton}" Foreground="Red" Margin="0,0,6,8"/>
+                <Button Content="Clear"  Click="Clear_Click"  Style="{StaticResource MaterialDesignFlatButton}"/>
+            </WrapPanel>
+        </Border>
+
+        <DataGrid Grid.Row="2" x:Name="Grid" AutoGenerateColumns="False" IsReadOnly="True"
+                  SelectionChanged="Grid_SelectionChanged" md:DataGridAssist.CellPadding="10,6">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="#"        Binding="{Binding Id}"       Width="50"/>
+                <DataGridTextColumn Header="Name"     Binding="{Binding Name}"     Width="220"/>
+                <DataGridTextColumn Header="Role"     Binding="{Binding Role}"     Width="180"/>
+                <DataGridTextColumn Header="Username" Binding="{Binding Username}" Width="180"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

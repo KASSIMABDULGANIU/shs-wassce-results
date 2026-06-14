@@ -1,0 +1,44 @@
+<Page x:Class="SHSWassceResultsMgt.Views.ScoreEntryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="Score Entry" Background="Transparent">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Score Entry" Style="{StaticResource PageTitle}"/>
+
+        <!-- Filters -->
+        <Border Grid.Row="1" Style="{StaticResource FormCard}">
+            <WrapPanel>
+                <ComboBox x:Name="ClassFilter"   Width="120" md:HintAssist.Hint="Class"   Margin="0,0,10,8"/>
+                <ComboBox x:Name="SubjectFilter" Width="220" md:HintAssist.Hint="Subject" Margin="0,0,10,8"
+                          DisplayMemberPath="Name"/>
+                <TextBox  x:Name="YearBox" Width="120" md:HintAssist.Hint="Academic Year" Text="2025/2026" Margin="0,0,10,8"/>
+                <TextBox  x:Name="TermBox" Width="80"  md:HintAssist.Hint="Term" Text="1" Margin="0,0,16,8"/>
+                <Button Content="Load Students" Click="LoadStudents_Click" Margin="0,0,6,8"/>
+                <Button Content="Save All Scores" Click="SaveAll_Click" Margin="0,0,0,8"/>
+            </WrapPanel>
+        </Border>
+
+        <!-- Score grid -->
+        <DataGrid Grid.Row="2" x:Name="ScoresGrid" AutoGenerateColumns="False" CanUserAddRows="False"
+                  md:DataGridAssist.CellPadding="10,6">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Student"          Binding="{Binding StudentName}" Width="240" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Class Score (50)" Binding="{Binding ClassScore, UpdateSourceTrigger=PropertyChanged}" Width="140"/>
+                <DataGridTextColumn Header="Exam Score (50)"  Binding="{Binding ExamScore, UpdateSourceTrigger=PropertyChanged}"  Width="140"/>
+                <DataGridTextColumn Header="Total (100)" Binding="{Binding Total}"  Width="100" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Grade"       Binding="{Binding Grade}"  Width="70"  IsReadOnly="True"/>
+                <DataGridTextColumn Header="Remark"      Binding="{Binding Remark}" Width="130" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock Grid.Row="3" x:Name="Status" Opacity="0.6" FontSize="12" Margin="0,8,0,0"/>
+    </Grid>
+</Page>

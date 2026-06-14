@@ -1,0 +1,57 @@
+<Application x:Class="SHSWassceResultsMgt.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <md:BundledTheme BaseTheme="Light" PrimaryColor="DeepPurple" SecondaryColor="Amber"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Sidebar nav button -->
+            <Style x:Key="NavButtonStyle" TargetType="Button"
+                   BasedOn="{StaticResource MaterialDesignFlatButton}">
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="Padding" Value="12,10"/>
+                <Setter Property="Margin" Value="0,2"/>
+                <Setter Property="FontSize" Value="13"/>
+                <Setter Property="Height" Value="42"/>
+            </Style>
+
+            <!-- Dashboard stat cards -->
+            <Style x:Key="StatCard" TargetType="Border">
+                <Setter Property="Background" Value="#F5F3FF"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="Padding" Value="20,16"/>
+            </Style>
+            <Style x:Key="StatLabel" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="Opacity" Value="0.6"/>
+                <Setter Property="Margin" Value="0,0,0,6"/>
+            </Style>
+            <Style x:Key="StatValue" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="34"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="#4338CA"/>
+            </Style>
+
+            <!-- Section page header -->
+            <Style x:Key="PageTitle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="26"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Margin" Value="0,0,0,20"/>
+            </Style>
+
+            <!-- Form card container -->
+            <Style x:Key="FormCard" TargetType="Border">
+                <Setter Property="Background" Value="#F8F7FF"/>
+                <Setter Property="CornerRadius" Value="8"/>
+                <Setter Property="Padding" Value="16"/>
+                <Setter Property="Margin" Value="0,0,0,16"/>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

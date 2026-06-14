@@ -1,0 +1,34 @@
+# Build folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+*.sln.iml
+
+# Logs
+*.log
+
+# Databases
+*.db
+
+# Publish output
+publish/
+
+# NuGet
+*.nupkg
+.nuget/
+packages/
+
+# Other temp files
+*.tmp
+*.swp
