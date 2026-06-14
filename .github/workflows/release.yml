@@ -29,7 +29,7 @@ jobs:
       - name: Build installer
         run: |
           iscc setup.iss
-          if not exist Output\SHSWassceResultsMgt-Setup-1.0.0.exe exit 1
+          if (!(Test-Path 'Output\SHSWassceResultsMgt-Setup-1.0.0.exe')) { exit 1 }
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
