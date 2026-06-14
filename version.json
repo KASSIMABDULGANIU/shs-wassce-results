@@ -1,5 +1,5 @@
 {
   "version": "1.0.0",
-  "downloadUrl": "https://github.com/YOUR_USERNAME/YOUR_REPO/releases/download/v1.0.0/SHSWassceResultsMgt-Setup.exe",
-  "notes": "Initial release."
+  "downloadUrl": "https://github.com/KASSIMABDULGANIU/shs-wassce-results/releases/download/v1.0.0/SHSWassceResultsMgt-Setup-1.0.0.exe",
+  "notes": "Initial release with installer. Download the installer from GitHub Releases."
 }

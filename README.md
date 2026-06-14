@@ -38,6 +38,14 @@ Output: `bin\Release\net9.0-windows\win-x64\publish\SHSWassceResultsMgt.exe`
 
 This single .exe runs on any Windows PC — no .NET install needed on the target machine.
 
+## 4. Build the installer
+
+The project includes `setup.iss` for Inno Setup. After publishing the app, compile the installer with Inno Setup to produce:
+
+`Output\SHSWassceResultsMgt-Setup-1.0.0.exe`
+
+The repository also contains a GitHub Actions workflow to build the installer automatically when you push a tag like `v1.0.0`.
+
 ---
 
 ## App structure

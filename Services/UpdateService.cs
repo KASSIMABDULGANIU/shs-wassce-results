@@ -17,7 +17,7 @@ public static class UpdateService
     //  https://raw.githubusercontent.com/USERNAME/REPO/main/version.json
     // ──────────────────────────────────────────────────────────
     private const string VersionUrl =
-        "https://raw.githubusercontent.com/YOUR_USERNAME/shs-wassce-results/main/version.json";
+        "https://raw.githubusercontent.com/KASSIMABDULGANIU/shs-wassce-results/main/version.json";
 
     public static async Task CheckForUpdateAsync(bool silent = false)
     {
